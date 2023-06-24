@@ -1,12 +1,12 @@
 #include "monty.h"
-
 /**
- * nop - Does nothing.
- * @stack: Double pointer to the top of the stack.
- * @line_number: Line number of the opcode being executed.
+  *nop- nothing
+  *@stack: stack stack
+  *@counter: line_number
+  *Return: no return
  */
-void nop(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int counter)
 {
-	(void)stack;
-	(void)line_number;
+	(void) counter;
+	(void) stack;
 }

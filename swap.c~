@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * add - adds the top two elements of the stack.
- * @stack: stack
- * @line_number: line_number
+ * swap - adds the top two elements of the stack.
+ * @stack: stack stack
+ * @counter: line_number
  * Return: no return
 */
-void add(stack_t **stack, unsigned int line_number)
+void swap(stack_t **stack, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -18,15 +18,14 @@ void add(stack_t **stack, unsigned int line_number)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
 		fclose(bus.file);
 		free(bus.line_content);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	h = *stack;
-	aux = h->n + h->next->n;
+	aux = h->n;
+	h->n = h->next->n;
 	h->next->n = aux;
-	*stack = h->next;
-	free(h);
 }
